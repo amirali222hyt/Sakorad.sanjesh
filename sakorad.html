@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Sakorad | سامانه اعلام نتایج</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+            direction: rtl;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        input[type="text"], input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .section {
+            display: none;
+            text-align: right;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 8px;
+            text-align: center;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>سامانه اعلام نتایج Sakorad</h2>
+        <input type="text" id="code" placeholder="کد ملی">
+        <input type="password" id="pass" placeholder="رمز ورود">
+        <button onclick="login()">اعلام نتایج</button>
+
+        <div id="initialResult" class="section">
+            <h3>نتیجه اولیه</h3>
+            <p>وضعیت داوطلب: مجاز به انتخاب رشته در نوبت روزانه</p>
+            <button onclick="showReport()">مشاهده کارنامه</button>
+        </div>
+
+        <div id="reportCard" class="section">
+            <h3>کارنامه آزمون</h3>
+            <table>
+                <tr><th>درس</th><th>درصد</th></tr>
+                <tr><td>زیست‌شناسی</td><td>۴۱٫۴۶٪</td></tr>
+                <tr><td>فیزیک</td><td>۳۹٫۳۴٪</td></tr>
+                <tr><td>شیمی</td><td>۵۳٫۶۷٪</td></tr>
+                <tr><td>ریاضی</td><td>۶۲٫۱۹٪</td></tr>
+                <tr><td>زمین‌شناسی</td><td>۲۸٫۳۳٪</td></tr>
+                <tr><td><strong>تراز کل</strong></td><td><strong>۸۹۹۷</strong></td></tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            const code = document.getElementById("code").value;
+            const pass = document.getElementById("pass").value;
+            if (code === "2220208087" && pass === "AMIRALI2amirali2@") {
+                document.getElementById("initialResult").style.display = "block";
+            } else {
+                alert("کد ملی یا رمز نادرست است.");
+            }
+        }
+
+        function showReport() {
+            document.getElementById("reportCard").style.display = "block";
+        }
+    </script>
+</body>
+</html>
